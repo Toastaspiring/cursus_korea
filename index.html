@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprenez le Coréen - Cursus Complet pour Francophones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FAFB;
+        }
+
+        .korean-text {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #4F46E5;
+            border-bottom-color: #4F46E5;
+        }
+        
+        .flashcard-container {
+            perspective: 1000px;
+        }
+
+        .flashcard {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flashcard.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .flashcard-front {
+            background-color: #ffffff;
+            color: #111827;
+        }
+
+        .flashcard-back {
+            background-color: #4F46E5;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .quiz-option.correct {
+            background-color: #10B981 !important;
+            color: white !important;
+            border-color: #059669 !important;
+        }
+
+        .quiz-option.incorrect {
+            background-color: #EF4444 !important;
+            color: white !important;
+            border-color: #DC2626 !important;
+        }
+
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gray-900 korean-text">🇰🇷 Apprenez le Coréen</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#introduction" class="nav-link text-gray-600 border-b-2 border-transparent">Introduction</a>
+                    <a href="#hangul" class="nav-link text-gray-600 border-b-2 border-transparent">Hangul</a>
+                    <a href="#prononciation" class="nav-link text-gray-600 border-b-2 border-transparent">Prononciation</a>
+                    <a href="#grammaire" class="nav-link text-gray-600 border-b-2 border-transparent">Grammaire</a>
+                    <a href="#vocabulaire" class="nav-link text-gray-600 border-b-2 border-transparent">Vocabulaire</a>
+                    <a href="#culture" class="nav-link text-gray-600 border-b-2 border-transparent">Culture</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#introduction" class="block py-2 text-gray-600">Introduction</a>
+                <a href="#hangul" class="block py-2 text-gray-600">Hangul</a>
+                <a href="#prononciation" class="block py-2 text-gray-600">Prononciation</a>
+                <a href="#grammaire" class="block py-2 text-gray-600">Grammaire</a>
+                <a href="#vocabulaire" class="block py-2 text-gray-600">Vocabulaire</a>
+                <a href="#culture" class="block py-2 text-gray-600">Culture</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4 korean-text">안녕하세요! Bienvenue !</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Votre aventure pour apprendre le coréen commence ici. Ce guide complet est spécialement conçu pour vous, francophones, pour vous accompagner pas à pas.</p>
+        </section>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Introduction au Coréen</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-4">Pourquoi apprendre le coréen ?</h3>
+                    <p class="text-gray-700">La Corée du Sud rayonne dans le monde entier grâce à sa culture (K-pop, dramas, cinéma), son dynamisme économique (Samsung, Hyundai) et sa richesse historique. Maîtriser le coréen vous ouvrira les portes d'un monde fascinant et de nouvelles opportunités.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-4">Les clés du succès</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Motivation :</strong> Gardez vos objectifs en tête.</li>
+                        <li><strong>Régularité :</strong> Mieux vaut 20 min par jour que 3h par semaine.</li>
+                        <li><strong>Immersion :</strong> Écoutez, regardez, vivez en coréen.</li>
+                        <li><strong>Pratique :</strong> N'ayez pas peur de parler et d'écrire.</li>
+                        <li><strong>Patience :</strong> C'est un marathon, pas un sprint. 화이팅!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'alphabet Hangul Section -->
+        <section id="hangul" class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">L'alphabet Hangul (한글)</h2>
+            <div class="card mb-8">
+                <p class="text-gray-700 leading-relaxed">Créé au 15ème siècle par le Roi Sejong le Grand, le Hangul est l'un des alphabets les plus logiques et scientifiques au monde. Contrairement aux idées reçues, il est très facile à apprendre ! Les lettres sont conçues pour représenter la position de la bouche et de la langue lors de leur prononciation.</p>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 text-center">Voyelles de base (모음)</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- Voyelles interactives -->
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅏ"><div class="flashcard-face flashcard-front korean-text">ㅏ</div><div class="flashcard-face flashcard-back">a</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅓ"><div class="flashcard-face flashcard-front korean-text">ㅓ</div><div class="flashcard-face flashcard-back">eo</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅗ"><div class="flashcard-face flashcard-front korean-text">ㅗ</div><div class="flashcard-face flashcard-back">o</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅜ"><div class="flashcard-face flashcard-front korean-text">ㅜ</div><div class="flashcard-face flashcard-back">u</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅡ"><div class="flashcard-face flashcard-front korean-text">ㅡ</div><div class="flashcard-face flashcard-back">eu</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅣ"><div class="flashcard-face flashcard-front korean-text">ㅣ</div><div class="flashcard-face flashcard-back">i</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅐ"><div class="flashcard-face flashcard-front korean-text">ㅐ</div><div class="flashcard-face flashcard-back">ae</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅔ"><div class="flashcard-face flashcard-front korean-text">ㅔ</div><div class="flashcard-face flashcard-back">e</div></div></div>
+                </div>
+                <p class="text-center mt-4 text-gray-500 italic">Cliquez sur les cartes pour voir la prononciation !</p>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 text-center">Consonnes de base (자음)</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- Consonnes interactives -->
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㄱ"><div class="flashcard-face flashcard-front korean-text">ㄱ</div><div class="flashcard-face flashcard-back">g/k</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㄴ"><div class="flashcard-face flashcard-front korean-text">ㄴ</div><div class="flashcard-face flashcard-back">n</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㄷ"><div class="flashcard-face flashcard-front korean-text">ㄷ</div><div class="flashcard-face flashcard-back">d/t</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㄹ"><div class="flashcard-face flashcard-front korean-text">ㄹ</div><div class="flashcard-face flashcard-back">r/l</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅁ"><div class="flashcard-face flashcard-front korean-text">ㅁ</div><div class="flashcard-face flashcard-back">m</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅂ"><div class="flashcard-face flashcard-front korean-text">ㅂ</div><div class="flashcard-face flashcard-back">b/p</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅅ"><div class="flashcard-face flashcard-front korean-text">ㅅ</div><div class="flashcard-face flashcard-back">s</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅇ"><div class="flashcard-face flashcard-front korean-text">ㅇ</div><div class="flashcard-face flashcard-back">ng/muet</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅈ"><div class="flashcard-face flashcard-front korean-text">ㅈ</div><div class="flashcard-face flashcard-back">j</div></div></div>
+                    <div class="flashcard-container"><div class="flashcard" data-char="ㅎ"><div class="flashcard-face flashcard-front korean-text">ㅎ</div><div class="flashcard-face flashcard-back">h</div></div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="text-2xl font-bold mb-4">Formation des syllabes</h3>
+                <p class="mb-4">En coréen, les lettres se regroupent en blocs syllabiques. Chaque bloc contient une consonne initiale, une voyelle et parfois une consonne finale.</p>
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div>
+                        <p class="font-semibold">Exemple 1 : 한 (han)</p>
+                        <p class="korean-text text-4xl font-bold">ㅎ + ㅏ + ㄴ</p>
+                        <p class="text-gray-600">(h + a + n)</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Exemple 2 : 글 (geul)</p>
+                        <p class="korean-text text-4xl font-bold">ㄱ + ㅡ + ㄹ</p>
+                        <p class="text-gray-600">(g + eu + l)</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Exemple 3 : 사랑 (sa-rang)</p>
+                        <p class="korean-text text-4xl font-bold">사 + 랑</p>
+                        <p class="text-gray-600">(ㅅ+ㅏ) + (ㄹ+ㅏ+ㅇ)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quiz Hangul -->
+            <div id="hangul-quiz" class="card mt-12">
+                 <h3 class="text-2xl font-bold mb-4">Quiz : Testez vos connaissances du Hangul !</h3>
+                 <p class="mb-6 text-gray-600">Identifiez la bonne prononciation pour chaque caractère.</p>
+                 <div id="quiz-container" class="space-y-6"></div>
+                 <button id="submit-quiz-btn" class="mt-6 w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Voir mon score</button>
+                 <div id="quiz-results" class="mt-6 text-center text-xl font-bold"></div>
+            </div>
+        </section>
+
+
+        <!-- Prononciation Section -->
+        <section id="prononciation" class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Prononciation et Phonétique</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-4">Consonnes aspirées</h3>
+                    <p class="text-gray-700 mb-2">Prononcées avec une forte expiration d'air.</p>
+                    <ul class="space-y-2 korean-text text-lg">
+                        <li>ㅊ (ch) : version aspirée de ㅈ</li>
+                        <li>ㅋ (k) : version aspirée de ㄱ</li>
+                        <li>ㅌ (t) : version aspirée de ㄷ</li>
+                        <li>ㅍ (p) : version aspirée de ㅂ</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-4">Consonnes tendues</h3>
+                    <p class="text-gray-700 mb-2">Prononcées avec une tension dans la gorge, sans air.</p>
+                     <ul class="space-y-2 korean-text text-lg">
+                        <li>ㅉ (jj) : version tendue de ㅈ</li>
+                        <li>ㄲ (kk) : version tendue de ㄱ</li>
+                        <li>ㄸ (tt) : version tendue de ㄷ</li>
+                        <li>ㅃ (pp) : version tendue de ㅂ</li>
+                        <li>ㅆ (ss) : version tendue de ㅅ</li>
+                    </ul>
+                </div>
+                <div class="card md:col-span-2 lg:col-span-1">
+                    <h3 class="text-xl font-bold mb-4">Changements phonétiques</h3>
+                    <p class="text-gray-700">La prononciation d'une lettre peut changer selon sa position. Par exemple, la consonne finale d'une syllabe peut se "lier" à la suivante si celle-ci commence par une voyelle.</p>
+                    <p class="mt-4 text-center text-lg font-semibold"><span class="korean-text">한국어 (han-guk-eo)</span><br>se prononce <br><span class="korean-text text-indigo-600">[한구거] (han-gu-geo)</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grammaire Section -->
+        <section id="grammaire" class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Grammaire Fondamentale</h2>
+             <div class="card mb-8">
+                 <h3 class="text-xl font-bold mb-4">Structure de phrase : Sujet-Objet-Verbe (SOV)</h3>
+                 <p class="text-gray-700 mb-4">C'est la différence majeure avec le français (SVO). Le verbe se trouve TOUJOURS à la fin de la phrase.</p>
+                 <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-center"><span class="font-semibold">Français :</span> Je (S) mange (V) une pomme (O).</p>
+                    <p class="text-center mt-2"><span class="font-semibold">Coréen :</span> 저는 (S) 사과를 (O) 먹어요 (V).</p>
+                    <p class="text-center text-sm text-gray-600 korean-text">(Jeoneun sagwareul meogeoyo.)</p>
+                 </div>
+            </div>
+            <div class="card">
+                <h3 class="text-xl font-bold mb-4">Les particules : le secret du coréen</h3>
+                <p class="text-gray-700 mb-6">Les particules sont de petites "étiquettes" collées aux noms pour indiquer leur rôle (sujet, objet, lieu, etc.). Elles sont essentielles !</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="p-3 font-semibold">Particule</th>
+                                <th class="p-3 font-semibold">Rôle</th>
+                                <th class="p-3 font-semibold">Exemple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-3 korean-text font-bold">은/는 (eun/neun)</td>
+                                <td class="p-3">Sujet / Thème</td>
+                                <td class="p-3 korean-text">저는 학생이에요. (Je suis étudiant)</td>
+                            </tr>
+                             <tr class="border-b">
+                                <td class="p-3 korean-text font-bold">을/를 (eul/reul)</td>
+                                <td class="p-3">Objet Direct</td>
+                                <td class="p-3 korean-text">책을 읽어요. (Je lis un livre)</td>
+                            </tr>
+                             <tr class="border-b">
+                                <td class="p-3 korean-text font-bold">에 (e)</td>
+                                <td class="p-3">Lieu (statique) / Destination / Temps</td>
+                                <td class="p-3 korean-text">학교에 가요. (Je vais à l'école)</td>
+                            </tr>
+                             <tr>
+                                <td class="p-3 korean-text font-bold">에서 (eseo)</td>
+                                <td class="p-3">Lieu (action)</td>
+                                <td class="p-3 korean-text">도서관에서 공부해요. (J'étudie à la bibliothèque)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vocabulaire Section -->
+        <section id="vocabulaire" class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Vocabulaire Thématique</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Famille -->
+                <div class="card">
+                     <details>
+                        <summary class="text-xl font-bold cursor-pointer">Famille (가족)</summary>
+                        <ul class="mt-4 space-y-2 text-gray-700">
+                            <li><span class="korean-text font-semibold">부모님 (bumonim):</span> Parents</li>
+                            <li><span class="korean-text font-semibold">아버지 (abeoji):</span> Père</li>
+                            <li><span class="korean-text font-semibold">어머니 (eomeoni):</span> Mère</li>
+                            <li><span class="korean-text font-semibold">형 (hyeong):</span> Grand frère (pour un homme)</li>
+                            <li><span class="korean-text font-semibold">누나 (nuna):</span> Grande sœur (pour un homme)</li>
+                            <li><span class="korean-text font-semibold">오빠 (oppa):</span> Grand frère (pour une femme)</li>
+                            <li><span class="korean-text font-semibold">언니 (eonni):</span> Grande sœur (pour une femme)</li>
+                            <li><span class="korean-text font-semibold">동생 (dongsaeng):</span> Frère/sœur plus jeune</li>
+                        </ul>
+                     </details>
+                </div>
+                <!-- Nourriture -->
+                 <div class="card">
+                     <details>
+                        <summary class="text-xl font-bold cursor-pointer">Nourriture (음식)</summary>
+                         <ul class="mt-4 space-y-2 text-gray-700">
+                            <li><span class="korean-text font-semibold">밥 (bap):</span> Riz cuit / Repas</li>
+                            <li><span class="korean-text font-semibold">물 (mul):</span> Eau</li>
+                            <li><span class="korean-text font-semibold">김치 (kimchi):</span> Kimchi</li>
+                            <li><span class="korean-text font-semibold">고기 (gogi):</span> Viande</li>
+                            <li><span class="korean-text font-semibold">커피 (keopi):</span> Café</li>
+                            <li><span class="korean-text font-semibold">맛있어요 (masisseoyo):</span> C'est délicieux</li>
+                        </ul>
+                     </details>
+                </div>
+                <!-- Lieux -->
+                 <div class="card">
+                     <details>
+                        <summary class="text-xl font-bold cursor-pointer">Lieux (장소)</summary>
+                        <ul class="mt-4 space-y-2 text-gray-700">
+                            <li><span class="korean-text font-semibold">집 (jip):</span> Maison</li>
+                            <li><span class="korean-text font-semibold">학교 (hakgyo):</span> École</li>
+                            <li><span class="korean-text font-semibold">회사 (hoesa):</span> Entreprise</li>
+                            <li><span class="korean-text font-semibold">병원 (byeongwon):</span> Hôpital</li>
+                            <li><span class="korean-text font-semibold">식당 (sikdang):</span> Restaurant</li>
+                            <li><span class="korean-text font-semibold">화장실 (hwajangsil):</span> Toilettes</li>
+                        </ul>
+                     </details>
+                </div>
+                 <!-- Expressions courantes -->
+                 <div class="card">
+                     <details>
+                        <summary class="text-xl font-bold cursor-pointer">Expressions utiles (유용한 표현)</summary>
+                        <ul class="mt-4 space-y-2 text-gray-700">
+                            <li><span class="korean-text font-semibold">네 (ne):</span> Oui</li>
+                            <li><span class="korean-text font-semibold">아니요 (aniyo):</span> Non</li>
+                            <li><span class="korean-text font-semibold">감사합니다 (gamsahamnida):</span> Merci (formel)</li>
+                            <li><span class="korean-text font-semibold">죄송합니다 (joesonghamnida):</span> Je suis désolé(e) (formel)</li>
+                            <li><span class="korean-text font-semibold">주세요 (juseyo):</span> Donnez-moi, s'il vous plaît</li>
+                            <li><span class="korean-text font-semibold">얼마예요? (eolmayeyo?):</span> Combien ça coûte ?</li>
+                        </ul>
+                     </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture Section -->
+        <section id="culture" class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Culture et Pratique</h2>
+            <div class="card">
+                <h3 class="text-xl font-bold mb-4">Le système honorifique et la politesse</h3>
+                <p class="text-gray-700">La culture coréenne accorde une grande importance au respect, notamment envers les aînés. Cela se reflète dans la langue avec différents niveaux de politesse. En cas de doute, utilisez toujours la forme polie standard (se terminant par -요, yo). Appeler les gens par leur titre (ex: professeur, directeur) est aussi très courant.</p>
+                
+                <div class="mt-6 grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">정 (Jeong)</h4>
+                        <p class="text-gray-600">Un sentiment profond d'attachement et de connexion émotionnelle qui lie les gens. C'est plus que de l'amitié ou de l'amour.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">눈치 (Nunchi)</h4>
+                        <p class="text-gray-600">L'art subtil de "lire l'ambiance", de comprendre les pensées et les sentiments des autres sans qu'ils aient à parler. Une compétence sociale très valorisée.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="hidden fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-opacity duration-300">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+    </button>
+
+    <footer class="bg-white border-t mt-16">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+            <p>Crée avec ❤️ pour les passionnés de la Corée. Bonne étude !</p>
+            <p class="korean-text mt-2">한국어 공부 화이팅!</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Flashcards
+            const flashcards = document.querySelectorAll('.flashcard');
+            flashcards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('is-flipped');
+                });
+            });
+
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('hidden');
+                } else {
+                    backToTopButton.classList.add('hidden');
+                }
+            });
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Hangul Quiz
+            const quizData = [
+                { character: 'ㄱ', options: ['b/p', 'n', 'g/k', 's'], correct: 'g/k' },
+                { character: 'ㅏ', options: ['u', 'a', 'eo', 'i'], correct: 'a' },
+                { character: 'ㅁ', options: ['m', 'd/t', 'r/l', 'j'], correct: 'm' },
+                { character: 'ㅜ', options: ['o', 'eu', 'u', 'e'], correct: 'u' },
+                { character: 'ㅅ', options: ['s', 'h', 'ng', 'b/p'], correct: 's' },
+                { character: 'ㅓ', options: ['ae', 'e', 'a', 'eo'], correct: 'eo' },
+                { character: 'ㅈ', options: ['g/k', 'j', 'ch', 'h'], correct: 'j' },
+                { character: 'ㅗ', options: ['u', 'o', 'i', 'eu'], correct: 'o' },
+            ];
+            
+            const quizContainer = document.getElementById('quiz-container');
+            const submitQuizBtn = document.getElementById('submit-quiz-btn');
+            const quizResults = document.getElementById('quiz-results');
+            
+            let userAnswers = {};
+
+            function loadQuiz() {
+                quizContainer.innerHTML = '';
+                quizData.forEach((item, index) => {
+                    const questionElement = document.createElement('div');
+                    questionElement.classList.add('quiz-question');
+                    
+                    const questionText = document.createElement('p');
+                    questionText.innerHTML = `Question ${index + 1}: Quel est le son de <span class="korean-text font-bold text-2xl text-indigo-600">${item.character}</span> ?`;
+                    questionText.classList.add('mb-3', 'font-medium');
+                    questionElement.appendChild(questionText);
+                    
+                    const optionsContainer = document.createElement('div');
+                    optionsContainer.classList.add('grid', 'grid-cols-2', 'sm:grid-cols-4', 'gap-3');
+                    
+                    // Shuffle options
+                    const shuffledOptions = [...item.options].sort(() => Math.random() - 0.5);
+
+                    shuffledOptions.forEach(option => {
+                        const button = document.createElement('button');
+                        button.textContent = option;
+                        button.classList.add('quiz-option', 'p-3', 'border', 'rounded-lg', 'bg-white', 'hover:bg-gray-100', 'transition-colors');
+                        button.dataset.questionIndex = index;
+                        button.dataset.answer = option;
+                        
+                        button.addEventListener('click', () => {
+                            // Unselect other options for this question
+                            document.querySelectorAll(`.quiz-option[data-question-index="${index}"]`).forEach(btn => {
+                                btn.classList.remove('bg-indigo-200', 'border-indigo-400');
+                            });
+                            // Select this option
+                            button.classList.add('bg-indigo-200', 'border-indigo-400');
+                            userAnswers[index] = option;
+                        });
+                        optionsContainer.appendChild(button);
+                    });
+                    
+                    questionElement.appendChild(optionsContainer);
+                    quizContainer.appendChild(questionElement);
+                });
+            }
+
+            submitQuizBtn.addEventListener('click', () => {
+                let score = 0;
+                quizData.forEach((item, index) => {
+                    const selectedButton = document.querySelector(`.quiz-option[data-question-index="${index}"][data-answer="${userAnswers[index]}"]`);
+                    const allButtonsForQuestion = document.querySelectorAll(`.quiz-option[data-question-index="${index}"]`);
+
+                    allButtonsForQuestion.forEach(btn => {
+                        btn.disabled = true;
+                        const answer = btn.dataset.answer;
+                        if (answer === item.correct) {
+                            btn.classList.add('correct');
+                        }
+                    });
+
+                    if (userAnswers[index] === item.correct) {
+                        score++;
+                    } else if (selectedButton) {
+                        selectedButton.classList.add('incorrect');
+                    }
+                });
+                
+                quizResults.textContent = `Votre score : ${score} / ${quizData.length}`;
+                if(score === quizData.length){
+                    quizResults.textContent += " 🎉 Parfait !";
+                    quizResults.style.color = '#10B981';
+                } else if (score >= quizData.length / 2) {
+                    quizResults.textContent += " 👍 Pas mal ! Continuez comme ça !";
+                     quizResults.style.color = '#F59E0B';
+                } else {
+                    quizResults.textContent += " 🧐 Encore un petit effort ! 화이팅!";
+                     quizResults.style.color = '#EF4444';
+                }
+                
+                submitQuizBtn.textContent = 'Recommencer le quiz';
+                submitQuizBtn.addEventListener('click', () => {
+                    userAnswers = {};
+                    quizResults.textContent = '';
+                    loadQuiz();
+                    submitQuizBtn.textContent = 'Voir mon score';
+                }, { once: true });
+            });
+            
+            loadQuiz();
+        });
+    </script>
+
+</body>
+
+</html>
