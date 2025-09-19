@@ -94,6 +94,25 @@
             border-color: #DC2626 !important;
         }
 
+        .tts-trigger {
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+        .tts-trigger:hover {
+            color: #4F46E5;
+        }
+        .tts-trigger::after {
+            content: ' 🔊';
+            font-size: 0.75em;
+            opacity: 0.6;
+            display: inline-block;
+            margin-left: 2px;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .tts-trigger:hover::after {
+            opacity: 1;
+        }
+
     </style>
 </head>
 
@@ -108,9 +127,11 @@
                     <a href="#introduction" class="nav-link text-gray-600 border-b-2 border-transparent">Introduction</a>
                     <a href="#hangul" class="nav-link text-gray-600 border-b-2 border-transparent">Hangul</a>
                     <a href="#prononciation" class="nav-link text-gray-600 border-b-2 border-transparent">Prononciation</a>
+                    <a href="#communication" class="nav-link text-gray-600 border-b-2 border-transparent">Communication</a>
                     <a href="#grammaire" class="nav-link text-gray-600 border-b-2 border-transparent">Grammaire</a>
                     <a href="#vocabulaire" class="nav-link text-gray-600 border-b-2 border-transparent">Vocabulaire</a>
                     <a href="#culture" class="nav-link text-gray-600 border-b-2 border-transparent">Culture</a>
+                    <a href="#ressources" class="nav-link text-gray-600 border-b-2 border-transparent">Ressources</a>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -120,9 +141,11 @@
                 <a href="#introduction" class="block py-2 text-gray-600">Introduction</a>
                 <a href="#hangul" class="block py-2 text-gray-600">Hangul</a>
                 <a href="#prononciation" class="block py-2 text-gray-600">Prononciation</a>
+                <a href="#communication" class="block py-2 text-gray-600">Communication</a>
                 <a href="#grammaire" class="block py-2 text-gray-600">Grammaire</a>
                 <a href="#vocabulaire" class="block py-2 text-gray-600">Vocabulaire</a>
                 <a href="#culture" class="block py-2 text-gray-600">Culture</a>
+                <a href="#ressources" class="block py-2 text-gray-600">Ressources</a>
             </div>
         </nav>
     </header>
@@ -132,184 +155,570 @@
 
         <!-- Hero Section -->
         <section class="text-center mb-16">
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-4 korean-text">안녕하세요! Bienvenue !</h1>
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4"><span class="korean-text tts-trigger">안녕하세요!</span> Bienvenue !</h1>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">Votre aventure pour apprendre le coréen commence ici. Ce guide complet est spécialement conçu pour vous, francophones, pour vous accompagner pas à pas.</p>
         </section>
 
         <!-- Introduction Section -->
         <section id="introduction" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Introduction au Coréen</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Introduction au Cursus de Coréen pour Francophones</h2>
+
+            <div class="card mb-8">
+                <p class="text-gray-700 leading-relaxed">Bienvenue dans ce cursus complet d'apprentissage du coréen spécialement conçu pour les francophones. Ce manuel a été élaboré pour vous accompagner pas à pas, depuis vos premiers contacts avec cette fascinante langue jusqu'à l'acquisition d'une base solide vous permettant de communiquer efficacement en coréen.</p>
+            </div>
+
+            <div class="space-y-12">
                 <div class="card">
-                    <h3 class="text-xl font-bold mb-4">Pourquoi apprendre le coréen ?</h3>
-                    <p class="text-gray-700">La Corée du Sud rayonne dans le monde entier grâce à sa culture (K-pop, dramas, cinéma), son dynamisme économique (Samsung, Hyundai) et sa richesse historique. Maîtriser le coréen vous ouvrira les portes d'un monde fascinant et de nouvelles opportunités.</p>
+                    <h3 class="text-2xl font-bold mb-4">Pourquoi apprendre le coréen ?</h3>
+                    <div class="text-gray-700 leading-relaxed space-y-4">
+                        <p>La langue coréenne connaît un essor sans précédent dans le monde francophone. Cet engouement s'explique par plusieurs facteurs :</p>
+                        <p>La popularité croissante de la culture coréenne, notamment à travers la K-pop, les dramas et le cinéma coréen, a suscité un intérêt grandissant pour la langue. Des films comme "Parasite" de Bong Joon-ho, premier film non anglophone à remporter l'Oscar du meilleur film, ou des séries comme "Squid Game", ont propulsé la culture coréenne sur la scène internationale.</p>
+                        <p>Le dynamisme économique de la Corée du Sud, avec des entreprises comme Samsung, LG ou Hyundai, offre également des opportunités professionnelles pour ceux qui maîtrisent la langue.</p>
+                        <p>La richesse culturelle et historique de la Corée, avec ses traditions millénaires, sa gastronomie unique et son patrimoine, constitue une source inépuisable de découvertes pour les passionnés de cultures asiatiques.</p>
+                    </div>
                 </div>
+
                 <div class="card">
-                    <h3 class="text-xl font-bold mb-4">Les clés du succès</h3>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li><strong>Motivation :</strong> Gardez vos objectifs en tête.</li>
-                        <li><strong>Régularité :</strong> Mieux vaut 20 min par jour que 3h par semaine.</li>
-                        <li><strong>Immersion :</strong> Écoutez, regardez, vivez en coréen.</li>
-                        <li><strong>Pratique :</strong> N'ayez pas peur de parler et d'écrire.</li>
-                        <li><strong>Patience :</strong> C'est un marathon, pas un sprint. 화이팅!</li>
+                    <h3 class="text-2xl font-bold mb-4">Les particularités du coréen pour un francophone</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">Pour un francophone, l'apprentissage du coréen présente des défis spécifiques que ce cursus s'attache à relever :</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><p><strong class="font-semibold">Un système d'écriture unique :</strong> Le Hangul, créé au XVe siècle par le roi Sejong le Grand, est considéré comme l'un des alphabets les plus scientifiques et logiques au monde. Contrairement aux idées reçues, il est relativement facile à apprendre, même s'il diffère totalement de notre alphabet latin.</p></li>
+                        <li><p><strong class="font-semibold">Une structure grammaticale différente :</strong> En coréen, la structure de base des phrases suit l'ordre Sujet-Objet-Verbe, contrairement au français qui utilise l'ordre Sujet-Verbe-Objet. Cette inversion demande un certain temps d'adaptation.</p></li>
+                        <li><p><strong class="font-semibold">Un système honorifique complexe :</strong> La langue coréenne intègre profondément le respect des hiérarchies sociales à travers différents niveaux de politesse, concept moins présent en français.</p></li>
+                        <li><p><strong class="font-semibold">Des sons nouveaux :</strong> Certains phonèmes coréens n'existent pas en français, ce qui nécessite un entraînement spécifique de l'oreille et de la prononciation.</p></li>
                     </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Comment utiliser ce cursus</h3>
+                     <p class="text-gray-700 leading-relaxed mb-4">Ce manuel a été conçu pour un apprentissage progressif et structuré. Voici quelques conseils pour en tirer le meilleur parti :</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><p><strong class="font-semibold">Suivez l'ordre des chapitres :</strong> La progression a été soigneusement pensée pour construire vos connaissances étape par étape, en commençant par les fondamentaux.</p></li>
+                        <li><p><strong class="font-semibold">Pratiquez régulièrement :</strong> L'apprentissage d'une langue demande de la constance. Mieux vaut 20 minutes quotidiennes qu'une session intensive de 3 heures une fois par semaine.</p></li>
+                        <li><p><strong class="font-semibold">Utilisez les ressources complémentaires :</strong> À la fin de chaque chapitre, vous trouverez des recommandations de ressources (applications, sites, vidéos) pour approfondir vos connaissances.</p></li>
+                        <li><p><strong class="font-semibold">Faites les exercices :</strong> Ne vous contentez pas de lire les leçons, mais réalisez systématiquement les exercices proposés pour ancrer vos apprentissages.</p></li>
+                        <li><p><strong class="font-semibold">Écoutez et répétez :</strong> La prononciation est cruciale en coréen. Utilisez les ressources audio recommandées pour entraîner votre oreille et votre diction.</p></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Structure du cursus</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">Ce cursus est divisé en neuf sections principales, chacune abordant un aspect essentiel de l'apprentissage du coréen :</p>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                        <li><strong>Introduction au coréen :</strong> Histoire et contexte de la langue, présentation du Hangul, conseils d'apprentissage.</li>
+                        <li><strong>L'alphabet Hangul :</strong> Apprentissage détaillé des voyelles et consonnes, règles de composition des syllabes, exercices d'écriture et de lecture.</li>
+                        <li><strong>Prononciation et phonétique :</strong> Règles de prononciation spécifiques, changements phonétiques, intonation et rythme.</li>
+                        <li><strong>Premiers pas en communication :</strong> Salutations, présentations personnelles, expressions de politesse, chiffres et comptage, dates et heures.</li>
+                        <li><strong>Grammaire fondamentale :</strong> Structure des phrases, particules grammaticales, conjugaison des verbes, questions et négations.</li>
+                        <li><strong>Vocabulaire thématique :</strong> Famille, nourriture, transport, shopping, maison, corps humain, météo.</li>
+                        <li><strong>Construction de phrases :</strong> Phrases complexes, expression des souhaits et intentions, comparaisons, ordres et conseils.</li>
+                        <li><strong>Culture et pratique :</strong> Éléments culturels essentiels, expressions idiomatiques, situations de communication réelles.</li>
+                        <li><strong>Ressources et progression :</strong> Plan d'étude recommandé, ressources complémentaires, conseils pour continuer l'apprentissage.</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Les clés du succès pour apprendre le coréen</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">D'après les recherches et l'expérience de nombreux apprenants, voici les facteurs clés qui détermineront votre réussite dans l'apprentissage du coréen :</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><p><strong class="font-semibold">La motivation :</strong> Identifiez clairement pourquoi vous souhaitez apprendre le coréen et gardez cette motivation à l'esprit lorsque vous rencontrerez des difficultés.</p></li>
+                        <li><p><strong class="font-semibold">La régularité :</strong> Établissez un planning d'étude réaliste et tenez-vous-y. La constance est plus importante que l'intensité.</p></li>
+                        <li><p><strong class="font-semibold">L'immersion :</strong> Entourez-vous de coréen au quotidien à travers la musique, les séries, les films ou les podcasts.</p></li>
+                        <li><p><strong class="font-semibold">La pratique active :</strong> Ne vous contentez pas d'apprendre passivement, mais pratiquez activement en écrivant, en parlant et en interagissant avec des locuteurs natifs quand c'est possible.</p></li>
+                        <li><p><strong class="font-semibold">La patience :</strong> L'apprentissage d'une langue aussi différente du français demande du temps. Célébrez vos petites victoires et ne vous découragez pas face aux difficultés.</p></li>
+                    </ul>
+                    <p class="text-gray-700 leading-relaxed mt-6">Avec ce cursus comme guide et ces principes en tête, vous disposez de tous les outils nécessaires pour vous lancer avec succès dans l'apprentissage du coréen. Bonne chance dans cette passionnante aventure linguistique et culturelle !</p>
+                    <p class="text-center text-xl font-bold mt-6"><span class="korean-text tts-trigger">안녕하세요!</span> <span class="text-gray-600 font-medium">(Annyeonghaseyo!)</span> - Bonjour à vous et bon apprentissage !</p>
                 </div>
             </div>
         </section>
 
         <!-- L'alphabet Hangul Section -->
         <section id="hangul" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">L'alphabet Hangul (한글)</h2>
-            <div class="card mb-8">
-                <p class="text-gray-700 leading-relaxed">Créé au 15ème siècle par le Roi Sejong le Grand, le Hangul est l'un des alphabets les plus logiques et scientifiques au monde. Contrairement aux idées reçues, il est très facile à apprendre ! Les lettres sont conçues pour représenter la position de la bouche et de la langue lors de leur prononciation.</p>
-            </div>
-            
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-6 text-center">Voyelles de base (모음)</h3>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <!-- Voyelles interactives -->
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅏ"><div class="flashcard-face flashcard-front korean-text">ㅏ</div><div class="flashcard-face flashcard-back">a</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅓ"><div class="flashcard-face flashcard-front korean-text">ㅓ</div><div class="flashcard-face flashcard-back">eo</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅗ"><div class="flashcard-face flashcard-front korean-text">ㅗ</div><div class="flashcard-face flashcard-back">o</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅜ"><div class="flashcard-face flashcard-front korean-text">ㅜ</div><div class="flashcard-face flashcard-back">u</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅡ"><div class="flashcard-face flashcard-front korean-text">ㅡ</div><div class="flashcard-face flashcard-back">eu</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅣ"><div class="flashcard-face flashcard-front korean-text">ㅣ</div><div class="flashcard-face flashcard-back">i</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅐ"><div class="flashcard-face flashcard-front korean-text">ㅐ</div><div class="flashcard-face flashcard-back">ae</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅔ"><div class="flashcard-face flashcard-front korean-text">ㅔ</div><div class="flashcard-face flashcard-back">e</div></div></div>
-                </div>
-                <p class="text-center mt-4 text-gray-500 italic">Cliquez sur les cartes pour voir la prononciation !</p>
-            </div>
-            
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-6 text-center">Consonnes de base (자음)</h3>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <!-- Consonnes interactives -->
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㄱ"><div class="flashcard-face flashcard-front korean-text">ㄱ</div><div class="flashcard-face flashcard-back">g/k</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㄴ"><div class="flashcard-face flashcard-front korean-text">ㄴ</div><div class="flashcard-face flashcard-back">n</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㄷ"><div class="flashcard-face flashcard-front korean-text">ㄷ</div><div class="flashcard-face flashcard-back">d/t</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㄹ"><div class="flashcard-face flashcard-front korean-text">ㄹ</div><div class="flashcard-face flashcard-back">r/l</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅁ"><div class="flashcard-face flashcard-front korean-text">ㅁ</div><div class="flashcard-face flashcard-back">m</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅂ"><div class="flashcard-face flashcard-front korean-text">ㅂ</div><div class="flashcard-face flashcard-back">b/p</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅅ"><div class="flashcard-face flashcard-front korean-text">ㅅ</div><div class="flashcard-face flashcard-back">s</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅇ"><div class="flashcard-face flashcard-front korean-text">ㅇ</div><div class="flashcard-face flashcard-back">ng/muet</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅈ"><div class="flashcard-face flashcard-front korean-text">ㅈ</div><div class="flashcard-face flashcard-back">j</div></div></div>
-                    <div class="flashcard-container"><div class="flashcard" data-char="ㅎ"><div class="flashcard-face flashcard-front korean-text">ㅎ</div><div class="flashcard-face flashcard-back">h</div></div></div>
-                </div>
-            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">L'alphabet Hangul (한글) : Histoire, Structure et Apprentissage</h2>
+            <div class="space-y-12">
 
-            <div class="card">
-                <h3 class="text-2xl font-bold mb-4">Formation des syllabes</h3>
-                <p class="mb-4">En coréen, les lettres se regroupent en blocs syllabiques. Chaque bloc contient une consonne initiale, une voyelle et parfois une consonne finale.</p>
-                <div class="grid md:grid-cols-3 gap-6 text-center">
-                    <div>
-                        <p class="font-semibold">Exemple 1 : 한 (han)</p>
-                        <p class="korean-text text-4xl font-bold">ㅎ + ㅏ + ㄴ</p>
-                        <p class="text-gray-600">(h + a + n)</p>
-                    </div>
-                    <div>
-                        <p class="font-semibold">Exemple 2 : 글 (geul)</p>
-                        <p class="korean-text text-4xl font-bold">ㄱ + ㅡ + ㄹ</p>
-                        <p class="text-gray-600">(g + eu + l)</p>
-                    </div>
-                    <div>
-                        <p class="font-semibold">Exemple 3 : 사랑 (sa-rang)</p>
-                        <p class="korean-text text-4xl font-bold">사 + 랑</p>
-                        <p class="text-gray-600">(ㅅ+ㅏ) + (ㄹ+ㅏ+ㅇ)</p>
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Histoire et origine du Hangul</h3>
+                    <div class="text-gray-700 leading-relaxed space-y-4">
+                        <p>Le Hangul (한글), l'alphabet coréen, est l'une des créations linguistiques les plus remarquables de l'histoire. Contrairement à de nombreux systèmes d'écriture qui ont évolué progressivement sur des siècles, le Hangul a été créé délibérément par le roi Sejong le Grand (세종대왕) et une équipe de chercheurs au XVe siècle, plus précisément en 1443, et promulgué en 1446.</p>
+                        <p>Avant l'invention du Hangul, les Coréens utilisaient les caractères chinois (appelés Hanja en coréen) pour écrire. Ce système présentait un inconvénient majeur : il était extrêmement difficile à apprendre pour la population ordinaire, car il nécessitait la mémorisation de milliers de caractères complexes. Seule l'élite intellectuelle et aristocratique avait accès à l'éducation nécessaire pour maîtriser cette écriture.</p>
+                        <p>Le roi Sejong, quatrième souverain de la dynastie Joseon, était un monarque éclairé et profondément préoccupé par le bien-être de son peuple. Il déclara, dans le préambule du document présentant le nouvel alphabet : "Les sons de notre langue diffèrent de ceux de la Chine et ne s'accordent pas bien avec les caractères chinois. C'est pourquoi de nombreuses personnes ordinaires, bien qu'elles aient des choses à dire, ne peuvent exprimer leurs sentiments. J'en ai eu pitié et j'ai créé 28 nouvelles lettres. J'espère que cela permettra à chacun d'apprendre facilement et d'utiliser [ces lettres] dans la vie quotidienne."</p>
+                        <p>Cette création révolutionnaire a donc été motivée par un idéal démocratique d'accès à l'alphabétisation pour tous, ce qui était exceptionnel pour l'époque. Le Hangul est ainsi parfois appelé "l'alphabet du peuple".</p>
+                        <p>Initialement nommé Hunminjeongeum (훈민정음), signifiant "les sons corrects pour l'instruction du peuple", le Hangul n'a pas été immédiatement adopté. L'élite aristocratique, attachée aux caractères chinois qui symbolisaient leur statut et leur érudition, s'est opposée à son utilisation. Pendant plusieurs siècles, le Hangul a été principalement utilisé par les femmes et les classes populaires, tandis que les documents officiels et académiques continuaient d'être rédigés en Hanja.</p>
+                        <p>Ce n'est qu'au XXe siècle, avec la montée du nationalisme coréen face à l'occupation japonaise (1910-1945), que le Hangul est devenu un symbole de l'identité culturelle coréenne et a été pleinement adopté comme système d'écriture national. Aujourd'hui, le 9 octobre, date de la promulgation du Hangul en 1446, est célébré comme jour férié en Corée du Sud (Hangul Day).</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Quiz Hangul -->
-            <div id="hangul-quiz" class="card mt-12">
-                 <h3 class="text-2xl font-bold mb-4">Quiz : Testez vos connaissances du Hangul !</h3>
-                 <p class="mb-6 text-gray-600">Identifiez la bonne prononciation pour chaque caractère.</p>
-                 <div id="quiz-container" class="space-y-6"></div>
-                 <button id="submit-quiz-btn" class="mt-6 w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Voir mon score</button>
-                 <div id="quiz-results" class="mt-6 text-center text-xl font-bold"></div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Principes fondamentaux du Hangul</h3>
+                    <div class="text-gray-700 leading-relaxed space-y-4">
+                        <p>Ce qui rend le Hangul véritablement exceptionnel, c'est la logique scientifique qui sous-tend sa conception. Chaque lettre a été créée pour représenter visuellement la position des organes vocaux (lèvres, langue, dents) lors de la prononciation du son correspondant. Cette approche phonétique et anatomique fait du Hangul l'un des alphabets les plus scientifiques au monde.</p>
+                        <p>Le Hangul se compose aujourd'hui de 24 lettres de base : 14 consonnes (<span class="korean-text tts-trigger">자음</span>, jaeum) et 10 voyelles (<span class="korean-text tts-trigger">모음</span>, moeum). Ces lettres se combinent pour former des syllabes, qui sont les unités d'écriture du coréen. Contrairement au français où les lettres s'écrivent linéairement, les lettres coréennes se regroupent en blocs syllabiques carrés.</p>
+                        <p>Par exemple, le mot <span class="korean-text tts-trigger">"한글"</span> (Hangul) se compose de deux syllabes : <span class="korean-text tts-trigger">"한"</span> (han) et <span class="korean-text tts-trigger">"글"</span> (gul). Chaque syllabe forme un bloc distinct.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Les consonnes de base (<span class="korean-text tts-trigger">자음</span>, jaeum)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-100">
+                                <tr><th class="p-3 font-semibold">Lettre</th><th class="p-3 font-semibold">Prononciation</th><th class="p-3 font-semibold">Description</th></tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㄱ</td><td class="p-3">g/k</td><td class="p-3">Représente la forme de la langue touchant le palais</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㄴ</td><td class="p-3">n</td><td class="p-3">Représente la forme de la langue touchant les dents</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㄷ</td><td class="p-3">d/t</td><td class="p-3">Représente la forme de la langue touchant le palais dur</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㄹ</td><td class="p-3">r/l</td><td class="p-3">Représente la forme de la langue en mouvement</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅁ</td><td class="p-3">m</td><td class="p-3">Représente la forme de la bouche</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅂ</td><td class="p-3">b/p</td><td class="p-3">Représente la forme des lèvres fermées</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅅ</td><td class="p-3">s</td><td class="p-3">Représente la forme des dents</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅇ</td><td class="p-3">ng/muet</td><td class="p-3">Représente la forme de la gorge</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅈ</td><td class="p-3">j</td><td class="p-3">Dérivé de ㄱ</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅊ</td><td class="p-3">ch</td><td class="p-3">Dérivé de ㅈ</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅋ</td><td class="p-3">k</td><td class="p-3">Dérivé de ㄱ</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅌ</td><td class="p-3">t</td><td class="p-3">Dérivé de ㄷ</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅍ</td><td class="p-3">p</td><td class="p-3">Dérivé de ㅂ</td></tr>
+                                <tr><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅎ</td><td class="p-3">h</td><td class="p-3">Représente la forme de la gorge exhalant</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-bold mb-6 text-center">Testez-vous ! (Consonnes)</h4>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㄱ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㄱ</div><div class="flashcard-face flashcard-back">g/k</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㄴ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㄴ</div><div class="flashcard-face flashcard-back">n</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㄷ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㄷ</div><div class="flashcard-face flashcard-back">d/t</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㄹ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㄹ</div><div class="flashcard-face flashcard-back">r/l</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅁ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅁ</div><div class="flashcard-face flashcard-back">m</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅂ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅂ</div><div class="flashcard-face flashcard-back">b/p</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅅ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅅ</div><div class="flashcard-face flashcard-back">s</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅇ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅇ</div><div class="flashcard-face flashcard-back">ng/muet</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅈ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅈ</div><div class="flashcard-face flashcard-back">j</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅎ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅎ</div><div class="flashcard-face flashcard-back">h</div></div></div>
+                        </div>
+                         <p class="text-center mt-4 text-gray-500 italic">Cliquez sur les cartes pour voir la prononciation !</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Les voyelles de base (<span class="korean-text tts-trigger">모음</span>, moeum)</h3>
+                     <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-100">
+                                <tr><th class="p-3 font-semibold">Lettre</th><th class="p-3 font-semibold">Prononciation</th><th class="p-3 font-semibold">Description</th></tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅏ</td><td class="p-3">a</td><td class="p-3">Représente la forme de la langue à plat dans la bouche</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅓ</td><td class="p-3">eo</td><td class="p-3">Opposé de ㅏ</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅗ</td><td class="p-3">o</td><td class="p-3">Représente la forme des lèvres arrondies</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅜ</td><td class="p-3">u</td><td class="p-3">Opposé de ㅗ</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅡ</td><td class="p-3">eu</td><td class="p-3">Représente la forme de la langue à plat</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅣ</td><td class="p-3">i</td><td class="p-3">Représente la forme de la langue dressée</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅐ</td><td class="p-3">ae</td><td class="p-3">Combinaison de ㅏ et ㅣ</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅔ</td><td class="p-3">e</td><td class="p-3">Combinaison de ㅓ et ㅣ</td></tr>
+                                <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅚ</td><td class="p-3">oe</td><td class="p-3">Combinaison de ㅗ et ㅣ</td></tr>
+                                <tr><td class="p-3 korean-text tts-trigger font-bold text-lg">ㅟ</td><td class="p-3">wi</td><td class="p-3">Combinaison de ㅜ et ㅣ</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-bold mb-6 text-center">Testez-vous ! (Voyelles)</h4>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅏ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅏ</div><div class="flashcard-face flashcard-back">a</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅓ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅓ</div><div class="flashcard-face flashcard-back">eo</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅗ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅗ</div><div class="flashcard-face flashcard-back">o</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅜ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅜ</div><div class="flashcard-face flashcard-back">u</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅡ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅡ</div><div class="flashcard-face flashcard-back">eu</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅣ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅣ</div><div class="flashcard-face flashcard-back">i</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅐ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅐ</div><div class="flashcard-face flashcard-back">ae</div></div></div>
+                            <div class="flashcard-container"><div class="flashcard" data-char="ㅔ"><div class="flashcard-face flashcard-front korean-text tts-trigger">ㅔ</div><div class="flashcard-face flashcard-back">e</div></div></div>
+                        </div>
+                        <p class="text-center mt-4 text-gray-500 italic">Cliquez sur les cartes pour voir la prononciation !</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Formation des syllabes</h3>
+                    <div class="text-gray-700 leading-relaxed space-y-4">
+                        <p>En coréen, les lettres ne s'écrivent pas linéairement comme en français, mais se regroupent en blocs syllabiques. Chaque syllabe coréenne suit une structure précise :</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li><strong>Consonne initiale (<span class="korean-text tts-trigger">초성</span>, choseong)</strong> - Obligatoire, placée en haut ou à gauche du bloc</li>
+                            <li><strong>Voyelle médiane (<span class="korean-text tts-trigger">중성</span>, jungseong)</strong> - Obligatoire, placée à droite ou en bas de la consonne initiale</li>
+                            <li><strong>Consonne finale (<span class="korean-text tts-trigger">종성</span>, jongseong)</strong> - Optionnelle, placée en bas du bloc</li>
+                        </ol>
+                        <p>Si une syllabe commence par une voyelle, on utilise la consonne muette <span class="korean-text tts-trigger">ㅇ</span> comme consonne initiale.</p>
+                        <div class="grid md:grid-cols-3 gap-6 text-center mt-6">
+                            <div>
+                                <p class="font-semibold">Exemple 1 : <span class="korean-text tts-trigger">한</span> (han)</p>
+                                <p class="korean-text text-4xl font-bold">ㅎ + ㅏ + ㄴ</p>
+                                <p class="text-gray-600">(h + a + n)</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Exemple 2 : <span class="korean-text tts-trigger">글</span> (geul)</p>
+                                <p class="korean-text text-4xl font-bold">ㄱ + ㅡ + ㄹ</p>
+                                <p class="text-gray-600">(g + eu + l)</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Exemple 3 : <span class="korean-text tts-trigger">아</span> (a)</p>
+                                <p class="korean-text text-4xl font-bold">ㅇ + ㅏ</p>
+                                <p class="text-gray-600">(muet + a)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Règles de positionnement des lettres</h3>
+                    <div class="text-gray-700 leading-relaxed space-y-4">
+                         <p>La position des lettres dans un bloc syllabique dépend de la forme de la voyelle :</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Si la voyelle a une forme verticale (<span class="korean-text tts-trigger">ㅏ, ㅓ, ㅣ</span>, etc.), la consonne initiale se place à gauche et la consonne finale en bas.<br>Exemple : <span class="korean-text tts-trigger">밥 (bap) = ㅂ + ㅏ + ㅂ</span></li>
+                            <li>Si la voyelle a une forme horizontale (<span class="korean-text tts-trigger">ㅗ, ㅜ, ㅡ</span>, etc.), la consonne initiale se place en haut et la consonne finale en bas.<br>Exemple : <span class="korean-text tts-trigger">문 (mun) = ㅁ + ㅜ + ㄴ</span></li>
+                            <li>Si la voyelle a une forme complexe (<span class="korean-text tts-trigger">ㅘ, ㅝ</span>, etc.), on suit la direction principale de la voyelle.<br>Exemple : <span class="korean-text tts-trigger">왕 (wang) = ㅇ + ㅘ + ㅇ</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Méthode d'apprentissage du Hangul</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">L'apprentissage du Hangul est généralement considéré comme relativement facile. Avec une pratique régulière, il est possible de maîtriser les bases en quelques jours à quelques semaines. Voici une méthode progressive pour apprendre efficacement :</p>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                        <li><p><strong class="font-semibold">Étape 1 : Apprendre les voyelles simples :</strong> <span class="korean-text tts-trigger">ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ</span></p></li>
+                        <li><p><strong class="font-semibold">Étape 2 : Apprendre les consonnes de base :</strong> <span class="korean-text tts-trigger">ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ</span></p></li>
+                        <li><p><strong class="font-semibold">Étape 3 : Former des syllabes simples :</strong> <span class="korean-text tts-trigger">가, 나, 다, 라, 마</span></p></li>
+                        <li><p><strong class="font-semibold">Étape 4 : Apprendre les voyelles composées :</strong> <span class="korean-text tts-trigger">ㅐ, ㅔ, ㅚ, ㅟ</span></p></li>
+                        <li><p><strong class="font-semibold">Étape 5 : Apprendre les consonnes aspirées et tendues :</strong> <span class="korean-text tts-trigger">ㅋ, ㅌ, ㅍ, ㄲ, ㄸ, ㅃ</span></p></li>
+                        <li><p><strong class="font-semibold">Étape 6 : Former des syllabes avec consonnes finales :</strong> <span class="korean-text tts-trigger">한, 밥, 문</span></p></li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Ressources complémentaires pour l'apprentissage du Hangul</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">Pour approfondir votre apprentissage du Hangul, voici quelques ressources recommandées :</p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Applications mobiles</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Lingory</li>
+                                <li>Drops</li>
+                                <li>Write It! Korean</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Sites web</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Talk To Me In Korean</li>
+                                <li>Kaja Corée</li>
+                                <li>Parlons Coréen</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Vidéos YouTube</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Korean Unnie</li>
+                                <li>KajaCorée</li>
+                                <li>KoreanClass101</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Conclusion</h3>
+                    <div class="text-gray-700 leading-relaxed space-y-4">
+                        <p>Le Hangul est un système d'écriture remarquable par sa logique, sa cohérence et sa facilité d'apprentissage relative. Sa création délibérée pour faciliter l'alphabétisation de tous les Coréens en fait un cas unique dans l'histoire des écritures. En maîtrisant cet alphabet, vous franchissez la première étape essentielle vers l'apprentissage du coréen.</p>
+                        <p>N'oubliez pas que la pratique régulière est la clé. Essayez d'écrire quelques mots ou phrases en Hangul chaque jour, et progressivement, vous développerez une aisance naturelle avec cet alphabet fascinant.</p>
+                        <p class="text-center text-xl font-bold mt-4"><span class="korean-text tts-trigger">화이팅!</span> <span class="text-gray-600 font-medium">(Hwaiting!)</span> - Bon courage !</p>
+                    </div>
+                </div>
+
+                <div id="hangul-quiz" class="card">
+                    <h3 class="text-2xl font-bold mb-4">Quiz : Testez vos connaissances du Hangul !</h3>
+                    <p class="mb-6 text-gray-600">Identifiez la bonne prononciation pour chaque caractère.</p>
+                    <div id="quiz-container" class="space-y-6"></div>
+                    <button id="submit-quiz-btn" class="mt-6 w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Voir mon score</button>
+                    <div id="quiz-results" class="mt-6 text-center text-xl font-bold"></div>
+                </div>
             </div>
         </section>
 
 
         <!-- Prononciation Section -->
         <section id="prononciation" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Prononciation et Phonétique</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Prononciation et Phonétique du Coréen</h2>
+            <div class="space-y-12">
                 <div class="card">
-                    <h3 class="text-xl font-bold mb-4">Consonnes aspirées</h3>
-                    <p class="text-gray-700 mb-2">Prononcées avec une forte expiration d'air.</p>
-                    <ul class="space-y-2 korean-text text-lg">
-                        <li>ㅊ (ch) : version aspirée de ㅈ</li>
-                        <li>ㅋ (k) : version aspirée de ㄱ</li>
-                        <li>ㅌ (t) : version aspirée de ㄷ</li>
-                        <li>ㅍ (p) : version aspirée de ㅂ</li>
+                    <p class="text-gray-700 leading-relaxed">La prononciation est un aspect fondamental de l'apprentissage du coréen. Une bonne maîtrise des sons et des règles phonétiques vous permettra non seulement d'être mieux compris, mais aussi de mieux comprendre les locuteurs natifs. Ce chapitre vous guidera à travers les subtilités de la prononciation coréenne, en mettant l'accent sur les sons qui peuvent être particulièrement difficiles pour les francophones.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Les sons de base du coréen</h3>
+
+                    <h4 class="text-xl font-bold mt-6 mb-3">Les voyelles</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅏ (a)</strong> : Comme le "a" de "chat". C'est un son ouvert et clair.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅓ (eo)</strong> : Ce son n'existe pas vraiment en français. Il se situe entre le "o" et le "eu". Pour le prononcer, commencez par dire "o" puis ouvrez légèrement la bouche sans arrondir les lèvres.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅗ (o)</strong> : Proche du "o" de "mot", mais avec les lèvres plus arrondies.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅜ (u)</strong> : Comme le "ou" de "vous". Les lèvres sont très arrondies.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅡ (eu)</strong> : Ce son est similaire au "eu" de "deux", mais sans arrondir les lèvres. La langue est plate et légèrement reculée.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅣ (i)</strong> : Comme le "i" de "midi". C'est un son aigu avec les lèvres étirées.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅐ (ae)</strong> : Proche du "è" de "père" ou du "ai" de "lait".</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅔ (e)</strong> : Similaire au "é" de "été". En pratique, la distinction entre ㅐ et ㅔ s'estompe dans le coréen moderne.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅚ (oe)</strong> : Comme le "eu" dans "œuf", mais en gardant les lèvres plus arrondies.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">ㅟ (wi)</strong> : Prononcez "oui" très rapidement, comme une seule syllabe.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold mt-8 mb-3">Les consonnes</h4>
+                    <div class="space-y-6">
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Consonnes simples</h5>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong class="font-semibold korean-text tts-trigger">ㄱ (g/k)</strong> : Entre le "g" et le "k" français.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㄴ (n)</strong> : Comme le "n" de "non".</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㄷ (d/t)</strong> : Entre le "d" et le "t" français.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㄹ (r/l)</strong> : Entre le "r" et le "l" français, un battement léger de la langue contre le palais.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅁ (m)</strong> : Comme le "m" de "maman".</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅂ (b/p)</strong> : Entre le "b" et le "p" français.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅅ (s)</strong> : Comme le "s" de "sac". Devant "i" ou "y", il se prononce "ch".</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅇ (ng)</strong> : Muet en début de syllabe, "ng" (comme dans "camping") en fin de syllabe.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅈ (j)</strong> : Comme le "dj" dans "Djibouti".</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅎ (h)</strong> : Comme le "h" aspiré anglais dans "hello".</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Consonnes aspirées</h5>
+                             <p class="text-gray-600 mb-2">Prononcées avec une forte expiration d'air.</p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅋ (k)</strong> : Version aspirée de ㄱ.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅌ (t)</strong> : Version aspirée de ㄷ.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅍ (p)</strong> : Version aspirée de ㅂ.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅊ (ch)</strong> : Version aspirée de ㅈ.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Consonnes tendues (ou fortes)</h5>
+                            <p class="text-gray-600 mb-2">Prononcées avec une tension musculaire accrue dans la gorge.</p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong class="font-semibold korean-text tts-trigger">ㄲ (kk)</strong> : Version tendue de ㄱ.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㄸ (tt)</strong> : Version tendue de ㄷ.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅃ (pp)</strong> : Version tendue de ㅂ.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅆ (ss)</strong> : Version tendue de ㅅ.</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">ㅉ (jj)</strong> : Version tendue de ㅈ.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Règles de changements phonétiques</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">En coréen, la prononciation des lettres peut changer en fonction de leur position dans le mot ou des lettres qui les entourent. Voici les principales règles :</p>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                        <li><strong class="font-semibold">Assimilation :</strong> La prononciation d'une consonne peut changer au contact d'une autre. Ex: <span class="korean-text tts-trigger">학교 (hak-gyo)</span> se prononce <span class="korean-text text-indigo-600 tts-trigger">[학꾜] (hak-kyo)</span>.</li>
+                        <li><strong class="font-semibold">Neutralisation :</strong> En fin de syllabe, plusieurs consonnes se prononcent de la même manière. Ex: <span class="korean-text tts-trigger">밖 (bak)</span>, <span class="korean-text tts-trigger">부엌 (bueok)</span> et <span class="korean-text tts-trigger">닦다 (dakda)</span> ont toutes un son final [k].</li>
+                        <li><strong class="font-semibold">Liaison :</strong> Une consonne finale est "transférée" à la syllabe suivante si celle-ci commence par une voyelle. Ex: <span class="korean-text tts-trigger">한국어 (han-guk-eo)</span> se prononce <span class="korean-text text-indigo-600 tts-trigger">[한구거] (han-gu-geo)</span>.</li>
+                        <li><strong class="font-semibold">Nasalisation :</strong> Certaines consonnes deviennent des sons nasaux (ㄴ, ㅁ) au contact d'autres consonnes nasales. Ex: <span class="korean-text tts-trigger">십리 (sip-ri)</span> se prononce <span class="korean-text text-indigo-600 tts-trigger">[심니] (sim-ni)</span>.</li>
+                        <li><strong class="font-semibold">Palatalisation :</strong> Les consonnes ㄷ, ㅌ suivies de ㅣ se prononcent respectivement comme ㅈ et ㅊ. Ex: <span class="korean-text tts-trigger">같이 (gat-i)</span> se prononce <span class="korean-text text-indigo-600 tts-trigger">[가치] (ga-chi)</span>.</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Conseils pour améliorer votre prononciation</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Écoutez régulièrement du coréen authentique :</strong> Immergez-vous avec des podcasts, des chansons, des dramas ou des films.</li>
+                        <li><strong>Enregistrez-vous et comparez :</strong> Comparez votre prononciation avec celle de locuteurs natifs pour identifier les points à améliorer.</li>
+                        <li><strong>Pratiquez les paires minimales :</strong> Entraînez-vous à distinguer des mots qui ne diffèrent que par un seul son (ex: <span class="korean-text tts-trigger">불 (bul, feu)</span> vs <span class="korean-text tts-trigger">풀 (pul, herbe)</span>).</li>
+                        <li><strong>Utilisez des ressources visuelles :</strong> Des schémas montrant la position de la langue et des lèvres peuvent être très utiles.</li>
+                        <li><strong>Trouvez un partenaire linguistique :</strong> La pratique avec un locuteur natif est inestimable pour recevoir des retours immédiats.</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <!-- Communication Section -->
+        <section id="communication" class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Premiers Pas en Communication</h2>
+            <div class="space-y-12">
                 <div class="card">
-                    <h3 class="text-xl font-bold mb-4">Consonnes tendues</h3>
-                    <p class="text-gray-700 mb-2">Prononcées avec une tension dans la gorge, sans air.</p>
-                     <ul class="space-y-2 korean-text text-lg">
-                        <li>ㅉ (jj) : version tendue de ㅈ</li>
-                        <li>ㄲ (kk) : version tendue de ㄱ</li>
-                        <li>ㄸ (tt) : version tendue de ㄷ</li>
-                        <li>ㅃ (pp) : version tendue de ㅂ</li>
-                        <li>ㅆ (ss) : version tendue de ㅅ</li>
+                    <p class="text-gray-700 leading-relaxed">Maintenant que vous avez acquis les bases de l'alphabet Hangul et de la prononciation coréenne, il est temps de faire vos premiers pas dans la communication réelle. Ce chapitre vous présentera les expressions essentielles pour engager une conversation en coréen, vous présenter, et naviguer dans des situations quotidiennes simples.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Les salutations (<span class="korean-text tts-trigger">인사</span>)</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">En coréen, les salutations varient considérablement selon le niveau de formalité.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Salutations courantes</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong class="korean-text tts-trigger">안녕하세요? (Annyeonghaseyo?)</strong>: Bonjour (formel standard)</li>
+                                <li><strong class="korean-text tts-trigger">안녕? (Annyeong?)</strong>: Salut (informel)</li>
+                                <li><strong class="korean-text tts-trigger">감사합니다 (Gamsahamnida)</strong>: Merci (très formel)</li>
+                                <li><strong class="korean-text tts-trigger">고마워요 (Gomawoyo)</strong>: Merci (formel standard)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Formules de départ</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong class="korean-text tts-trigger">안녕히 가세요 (Annyeonghi gaseyo)</strong>: Au revoir (à qqn qui part)</li>
+                                <li><strong class="korean-text tts-trigger">안녕히 계세요 (Annyeonghi gyeseyo)</strong>: Au revoir (à qqn qui reste)</li>
+                                <li><strong class="korean-text tts-trigger">다음에 봐요 (Daeume bwayo)</strong>: À la prochaine</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Les présentations personnelles (<span class="korean-text tts-trigger">자기소개</span>)</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li>Pour dire son nom : <strong class="korean-text tts-trigger">저는 [nom]입니다 (Jeoneun [nom]imnida)</strong> (formel) ou <strong class="korean-text tts-trigger">제 이름은 [nom]이에요/예요 (Je ireumeun [nom]ieyo/yeyo)</strong> (standard).</li>
+                        <li>Pour demander le nom : <strong class="korean-text tts-trigger">이름이 뭐예요? (Ireumi mwoyeyo?)</strong> (standard).</li>
+                        <li>Pour dire sa nationalité : <strong class="korean-text tts-trigger">저는 프랑스 사람이에요 (Jeoneun peurangseu saramieyo)</strong> - Je suis français(e).</li>
+                        <li>Pour parler de son métier : <strong class="korean-text tts-trigger">저는 학생이에요 (Jeoneun haksaengieyo)</strong> - Je suis étudiant(e).</li>
                     </ul>
                 </div>
-                <div class="card md:col-span-2 lg:col-span-1">
-                    <h3 class="text-xl font-bold mb-4">Changements phonétiques</h3>
-                    <p class="text-gray-700">La prononciation d'une lettre peut changer selon sa position. Par exemple, la consonne finale d'une syllabe peut se "lier" à la suivante si celle-ci commence par une voyelle.</p>
-                    <p class="mt-4 text-center text-lg font-semibold"><span class="korean-text">한국어 (han-guk-eo)</span><br>se prononce <br><span class="korean-text text-indigo-600">[한구거] (han-gu-geo)</span></p>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Chiffres et comptage (<span class="korean-text tts-trigger">숫자</span>)</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">Le coréen utilise deux systèmes de numération : le système sino-coréen (pour l'argent, les dates, les numéros) et le système coréen natif (pour l'âge, les heures, compter des objets).</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Coréen Natif (1-5)</h4>
+                            <ul class="list-disc list-inside">
+                                <li>1: <span class="korean-text tts-trigger">하나 (hana)</span></li>
+                                <li>2: <span class="korean-text tts-trigger">둘 (dul)</span></li>
+                                <li>3: <span class="korean-text tts-trigger">셋 (set)</span></li>
+                                <li>4: <span class="korean-text tts-trigger">넷 (net)</span></li>
+                                <li>5: <span class="korean-text tts-trigger">다섯 (daseot)</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Sino-Coréen (1-5)</h4>
+                            <ul class="list-disc list-inside">
+                                <li>1: <span class="korean-text tts-trigger">일 (il)</span></li>
+                                <li>2: <span class="korean-text tts-trigger">이 (i)</span></li>
+                                <li>3: <span class="korean-text tts-trigger">삼 (sam)</span></li>
+                                <li>4: <span class="korean-text tts-trigger">사 (sa)</span></li>
+                                <li>5: <span class="korean-text tts-trigger">오 (o)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Premiers dialogues pratiques</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Dialogue 1 : Première rencontre</h4>
+                            <div class="bg-gray-100 p-4 rounded-lg space-y-2">
+                                <p><strong class="font-semibold">A:</strong> <span class="korean-text tts-trigger">안녕하세요?</span> (Annyeonghaseyo?)</p>
+                                <p><strong class="font-semibold">B:</strong> <span class="korean-text tts-trigger">안녕하세요. 제 이름은 민수입니다. 이름이 뭐예요?</span> (Annyeonghaseyo. Je ireumeun Minsu-imnida. Ireumi mwoyeyo?)</p>
+                                <p><strong class="font-semibold">A:</strong> <span class="korean-text tts-trigger">저는 마리입니다. 만나서 반갑습니다.</span> (Jeoneun Mari-imnida. Mannaseo bangapseumnida.)</p>
+                                <p><strong class="font-semibold">B:</strong> <span class="korean-text tts-trigger">마리 씨는 어느 나라 사람이에요?</span> (Mari ssi-neun eoneu nara saramieyo?)</p>
+                                <p><strong class="font-semibold">A:</strong> <span class="korean-text tts-trigger">저는 프랑스 사람이에요.</span> (Jeoneun peurangseu saramieyo.)</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Dialogue 2 : Au café</h4>
+                            <div class="bg-gray-100 p-4 rounded-lg space-y-2">
+                                <p><strong class="font-semibold">A:</strong> <span class="korean-text tts-trigger">실례합니다. 커피 한 잔 주세요.</span> (Sillyehamnida. Keopi han jan juseyo.)</p>
+                                <p><strong class="font-semibold">B:</strong> <span class="korean-text tts-trigger">네, 3,500원입니다.</span> (Ne, samcheon-obaek-won-imnida.)</p>
+                                <p><strong class="font-semibold">A:</strong> <span class="korean-text tts-trigger">여기 있습니다. 감사합니다.</span> (Yeogi isseumnida. Gamsahamnida.)</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Grammaire Section -->
         <section id="grammaire" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Grammaire Fondamentale</h2>
-             <div class="card mb-8">
-                 <h3 class="text-xl font-bold mb-4">Structure de phrase : Sujet-Objet-Verbe (SOV)</h3>
-                 <p class="text-gray-700 mb-4">C'est la différence majeure avec le français (SVO). Le verbe se trouve TOUJOURS à la fin de la phrase.</p>
-                 <div class="bg-gray-100 p-4 rounded-lg">
-                    <p class="text-center"><span class="font-semibold">Français :</span> Je (S) mange (V) une pomme (O).</p>
-                    <p class="text-center mt-2"><span class="font-semibold">Coréen :</span> 저는 (S) 사과를 (O) 먹어요 (V).</p>
-                    <p class="text-center text-sm text-gray-600 korean-text">(Jeoneun sagwareul meogeoyo.)</p>
-                 </div>
-            </div>
-            <div class="card">
-                <h3 class="text-xl font-bold mb-4">Les particules : le secret du coréen</h3>
-                <p class="text-gray-700 mb-6">Les particules sont de petites "étiquettes" collées aux noms pour indiquer leur rôle (sujet, objet, lieu, etc.). Elles sont essentielles !</p>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="p-3 font-semibold">Particule</th>
-                                <th class="p-3 font-semibold">Rôle</th>
-                                <th class="p-3 font-semibold">Exemple</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b">
-                                <td class="p-3 korean-text font-bold">은/는 (eun/neun)</td>
-                                <td class="p-3">Sujet / Thème</td>
-                                <td class="p-3 korean-text">저는 학생이에요. (Je suis étudiant)</td>
-                            </tr>
-                             <tr class="border-b">
-                                <td class="p-3 korean-text font-bold">을/를 (eul/reul)</td>
-                                <td class="p-3">Objet Direct</td>
-                                <td class="p-3 korean-text">책을 읽어요. (Je lis un livre)</td>
-                            </tr>
-                             <tr class="border-b">
-                                <td class="p-3 korean-text font-bold">에 (e)</td>
-                                <td class="p-3">Lieu (statique) / Destination / Temps</td>
-                                <td class="p-3 korean-text">학교에 가요. (Je vais à l'école)</td>
-                            </tr>
-                             <tr>
-                                <td class="p-3 korean-text font-bold">에서 (eseo)</td>
-                                <td class="p-3">Lieu (action)</td>
-                                <td class="p-3 korean-text">도서관에서 공부해요. (J'étudie à la bibliothèque)</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Grammaire Coréenne</h2>
+            <div class="space-y-12">
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-2">Grammaire Fondamentale</h3>
+                    <p class="text-gray-600 mb-6">Les bases pour construire vos premières phrases.</p>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3">Structure de phrase : Sujet-Objet-Verbe (SOV)</h4>
+                            <p class="text-gray-700 mb-4">Contrairement au français (SVO), le coréen place le verbe à la fin. C'est une règle d'or.</p>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                               <p><strong class="font-semibold">Français (SVO) :</strong> Je (S) mange (V) une pomme (O).</p>
+                               <p class="mt-2"><strong class="font-semibold">Coréen (SOV) :</strong> <span class="korean-text tts-trigger">저는 (S) 사과를 (O) 먹어요 (V).</span></p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3">Particules grammaticales (<span class="korean-text tts-trigger">조사</span>)</h4>
+                            <p class="text-gray-700 mb-4">Les particules sont des suffixes attachés aux noms pour indiquer leur fonction (sujet, objet, lieu...). Elles sont cruciales.</p>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-gray-100"><tr><th class="p-3 font-semibold">Particule</th><th class="p-3 font-semibold">Rôle</th><th class="p-3 font-semibold">Exemple</th></tr></thead>
+                                    <tbody>
+                                        <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold">은/는</td><td class="p-3">Sujet/Thème</td><td class="p-3 korean-text tts-trigger">저는 학생이에요.</td></tr>
+                                        <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold">을/를</td><td class="p-3">Objet Direct</td><td class="p-3 korean-text tts-trigger">책을 읽어요.</td></tr>
+                                        <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold">에</td><td class="p-3">Lieu (statique), Destination, Temps</td><td class="p-3 korean-text tts-trigger">학교에 가요.</td></tr>
+                                        <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold">에서</td><td class="p-3">Lieu (action)</td><td class="p-3 korean-text tts-trigger">카페에서 공부해요.</td></tr>
+                                        <tr class="border-b"><td class="p-3 korean-text tts-trigger font-bold">의</td><td class="p-3">Possession</td><td class="p-3 korean-text tts-trigger">친구의 집</td></tr>
+                                        <tr><td class="p-3 korean-text tts-trigger font-bold">와/과, 하고</td><td class="p-3">"et", "avec"</td><td class="p-3 korean-text tts-trigger">친구와 영화를 봤어요.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3">Conjugaison : Présent, Passé, Futur</h4>
+                            <p class="text-gray-700 mb-4">La conjugaison dépend du niveau de politesse et du temps, mais pas de la personne (je, tu, il...). Voici la forme standard polie (<span class="korean-text tts-trigger">-아요/어요</span>).</p>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-gray-100"><tr><th class="p-3 font-semibold">Temps</th><th class="p-3 font-semibold">Verbe : 가다 (aller)</th><th class="p-3 font-semibold">Verbe : 먹다 (manger)</th></tr></thead>
+                                    <tbody>
+                                        <tr class="border-b"><td class="p-3 font-bold">Présent</td><td class="p-3 korean-text tts-trigger">가요</td><td class="p-3 korean-text tts-trigger">먹어요</td></tr>
+                                        <tr class="border-b"><td class="p-3 font-bold">Passé</td><td class="p-3 korean-text tts-trigger">갔어요</td><td class="p-3 korean-text tts-trigger">먹었어요</td></tr>
+                                        <tr><td class="p-3 font-bold">Futur</td><td class="p-3 korean-text tts-trigger">갈 거예요</td><td class="p-3 korean-text tts-trigger">먹을 거예요</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-2">Construction de Phrases Complexes</h3>
+                    <p class="text-gray-600 mb-6">Pour aller plus loin et exprimer des idées plus nuancées.</p>
+
+                    <div class="space-y-8">
+                         <div>
+                            <h4 class="text-xl font-semibold mb-3">Relier des idées</h4>
+                             <p class="text-gray-700 mb-4">Utilisez des terminaisons verbales pour connecter des propositions.</p>
+                             <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong class="font-semibold korean-text tts-trigger">-고 (et)</strong> : <span class="korean-text tts-trigger">커피를 마시고 신문을 읽어요.</span> (Je bois du café et lis le journal.)</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">-지만 (mais)</strong> : <span class="korean-text tts-trigger">한국어는 어렵지만 재미있어요.</span> (Le coréen est difficile mais intéressant.)</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">-아/어서 (donc/parce que)</strong> : <span class="korean-text tts-trigger">배가 아파서 병원에 갔어요.</span> (J'avais mal au ventre, donc je suis allé à l'hôpital.)</li>
+                                <li><strong class="font-semibold korean-text tts-trigger">-(으)면 (si)</strong> : <span class="korean-text tts-trigger">시간이 있으면 영화를 볼 거예요.</span> (Si j'ai le temps, je regarderai un film.)</li>
+                             </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3">Exprimer ses souhaits et ses capacités</h4>
+                             <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong class="font-semibold">Vouloir faire : <span class="korean-text tts-trigger">-고 싶다</span></strong><br><span class="korean-text tts-trigger">한국에 가고 싶어요.</span> (Je veux aller en Corée.)</li>
+                                <li><strong class="font-semibold">Pouvoir faire : <span class="korean-text tts-trigger">-(으)ㄹ 수 있다</span></strong><br><span class="korean-text tts-trigger">한국어를 말할 수 있어요.</span> (Je peux parler coréen.)</li>
+                                <li><strong class="font-semibold">Ne pas pouvoir faire : <span class="korean-text tts-trigger">-(으)ㄹ 수 없다</span></strong><br><span class="korean-text tts-trigger">오늘 만날 수 없어요.</span> (Je ne peux pas vous voir aujourd'hui.)</li>
+                             </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3">Donner des ordres et des conseils</h4>
+                             <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong class="font-semibold">Impératif (poli) : <span class="korean-text tts-trigger">-(으)세요</span></strong><br><span class="korean-text tts-trigger">여기 앉으세요.</span> (Asseyez-vous ici, s'il vous plaît.)</li>
+                                <li><strong class="font-semibold">Interdiction : <span class="korean-text tts-trigger">-지 마세요</span></strong><br><span class="korean-text tts-trigger">담배를 피우지 마세요.</span> (Ne fumez pas, s'il vous plaît.)</li>
+                                <li><strong class="font-semibold">Obligation : <span class="korean-text tts-trigger">-아/어야 하다</span></strong><br><span class="korean-text tts-trigger">내일 일찍 일어나야 해요.</span> (Je dois me lever tôt demain.)</li>
+                             </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -317,84 +726,213 @@
         <!-- Vocabulaire Section -->
         <section id="vocabulaire" class="mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Vocabulaire Thématique</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Famille -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
                 <div class="card">
-                     <details>
-                        <summary class="text-xl font-bold cursor-pointer">Famille (가족)</summary>
+                     <details><summary class="text-xl font-bold cursor-pointer">Famille (<span class="korean-text tts-trigger">가족</span>)</summary>
                         <ul class="mt-4 space-y-2 text-gray-700">
-                            <li><span class="korean-text font-semibold">부모님 (bumonim):</span> Parents</li>
-                            <li><span class="korean-text font-semibold">아버지 (abeoji):</span> Père</li>
-                            <li><span class="korean-text font-semibold">어머니 (eomeoni):</span> Mère</li>
-                            <li><span class="korean-text font-semibold">형 (hyeong):</span> Grand frère (pour un homme)</li>
-                            <li><span class="korean-text font-semibold">누나 (nuna):</span> Grande sœur (pour un homme)</li>
-                            <li><span class="korean-text font-semibold">오빠 (oppa):</span> Grand frère (pour une femme)</li>
-                            <li><span class="korean-text font-semibold">언니 (eonni):</span> Grande sœur (pour une femme)</li>
-                            <li><span class="korean-text font-semibold">동생 (dongsaeng):</span> Frère/sœur plus jeune</li>
+                            <li><strong class="korean-text tts-trigger">가족 (gajok):</strong> Famille</li>
+                            <li><strong class="korean-text tts-trigger">부모님 (bumonim):</strong> Parents</li>
+                            <li><strong class="korean-text tts-trigger">아버지 (abeoji):</strong> Père</li>
+                            <li><strong class="korean-text tts-trigger">어머니 (eomeoni):</strong> Mère</li>
+                            <li><strong class="korean-text tts-trigger">형 (hyeong):</strong> Grand frère (d'un h.)</li>
+                            <li><strong class="korean-text tts-trigger">오빠 (oppa):</strong> Grand frère (d'une f.)</li>
+                            <li><strong class="korean-text tts-trigger">누나 (nuna):</strong> Grande sœur (d'un h.)</li>
+                            <li><strong class="korean-text tts-trigger">언니 (eonni):</strong> Grande sœur (d'une f.)</li>
+                            <li><strong class="korean-text tts-trigger">남동생 (namdongsaeng):</strong> Petit frère</li>
+                            <li><strong class="korean-text tts-trigger">여동생 (yeodongsaeng):</strong> Petite sœur</li>
                         </ul>
                      </details>
                 </div>
-                <!-- Nourriture -->
+
                  <div class="card">
-                     <details>
-                        <summary class="text-xl font-bold cursor-pointer">Nourriture (음식)</summary>
+                     <details><summary class="text-xl font-bold cursor-pointer">Nourriture (<span class="korean-text tts-trigger">음식</span>)</summary>
                          <ul class="mt-4 space-y-2 text-gray-700">
-                            <li><span class="korean-text font-semibold">밥 (bap):</span> Riz cuit / Repas</li>
-                            <li><span class="korean-text font-semibold">물 (mul):</span> Eau</li>
-                            <li><span class="korean-text font-semibold">김치 (kimchi):</span> Kimchi</li>
-                            <li><span class="korean-text font-semibold">고기 (gogi):</span> Viande</li>
-                            <li><span class="korean-text font-semibold">커피 (keopi):</span> Café</li>
-                            <li><span class="korean-text font-semibold">맛있어요 (masisseoyo):</span> C'est délicieux</li>
+                            <li><strong class="korean-text tts-trigger">밥 (bap):</strong> Riz / Repas</li>
+                            <li><strong class="korean-text tts-trigger">물 (mul):</strong> Eau</li>
+                            <li><strong class="korean-text tts-trigger">김치 (kimchi):</strong> Kimchi</li>
+                            <li><strong class="korean-text tts-trigger">고기 (gogi):</strong> Viande</li>
+                            <li><strong class="korean-text tts-trigger">채소 (chaeso):</strong> Légumes</li>
+                            <li><strong class="korean-text tts-trigger">과일 (gwail):</strong> Fruits</li>
+                            <li><strong class="korean-text tts-trigger">맛있다 (masitda):</strong> Être délicieux</li>
+                            <li><strong class="korean-text tts-trigger">맵다 (maepda):</strong> Être épicé</li>
                         </ul>
                      </details>
                 </div>
-                <!-- Lieux -->
+
                  <div class="card">
-                     <details>
-                        <summary class="text-xl font-bold cursor-pointer">Lieux (장소)</summary>
+                     <details><summary class="text-xl font-bold cursor-pointer">Transport (<span class="korean-text tts-trigger">교통</span>)</summary>
                         <ul class="mt-4 space-y-2 text-gray-700">
-                            <li><span class="korean-text font-semibold">집 (jip):</span> Maison</li>
-                            <li><span class="korean-text font-semibold">학교 (hakgyo):</span> École</li>
-                            <li><span class="korean-text font-semibold">회사 (hoesa):</span> Entreprise</li>
-                            <li><span class="korean-text font-semibold">병원 (byeongwon):</span> Hôpital</li>
-                            <li><span class="korean-text font-semibold">식당 (sikdang):</span> Restaurant</li>
-                            <li><span class="korean-text font-semibold">화장실 (hwajangsil):</span> Toilettes</li>
+                            <li><strong class="korean-text tts-trigger">버스 (beoseu):</strong> Bus</li>
+                            <li><strong class="korean-text tts-trigger">지하철 (jihacheol):</strong> Métro</li>
+                            <li><strong class="korean-text tts-trigger">택시 (taeksi):</strong> Taxi</li>
+                            <li><strong class="korean-text tts-trigger">기차 (gicha):</strong> Train</li>
+                            <li><strong class="korean-text tts-trigger">비행기 (bihaenggi):</strong> Avion</li>
+                            <li><strong class="korean-text tts-trigger">자전거 (jajeongeo):</strong> Vélo</li>
                         </ul>
                      </details>
                 </div>
-                 <!-- Expressions courantes -->
-                 <div class="card">
-                     <details>
-                        <summary class="text-xl font-bold cursor-pointer">Expressions utiles (유용한 표현)</summary>
+
+                <div class="card">
+                     <details><summary class="text-xl font-bold cursor-pointer">Shopping (<span class="korean-text tts-trigger">쇼핑</span>)</summary>
                         <ul class="mt-4 space-y-2 text-gray-700">
-                            <li><span class="korean-text font-semibold">네 (ne):</span> Oui</li>
-                            <li><span class="korean-text font-semibold">아니요 (aniyo):</span> Non</li>
-                            <li><span class="korean-text font-semibold">감사합니다 (gamsahamnida):</span> Merci (formel)</li>
-                            <li><span class="korean-text font-semibold">죄송합니다 (joesonghamnida):</span> Je suis désolé(e) (formel)</li>
-                            <li><span class="korean-text font-semibold">주세요 (juseyo):</span> Donnez-moi, s'il vous plaît</li>
-                            <li><span class="korean-text font-semibold">얼마예요? (eolmayeyo?):</span> Combien ça coûte ?</li>
+                            <li><strong class="korean-text tts-trigger">가게 (gage):</strong> Magasin</li>
+                            <li><strong class="korean-text tts-trigger">돈 (don):</strong> Argent</li>
+                            <li><strong class="korean-text tts-trigger">가격 (gagyeok):</strong> Prix</li>
+                            <li><strong class="korean-text tts-trigger">얼마예요? (eolmayeyo?):</strong> Combien ça coûte?</li>
+                            <li><strong class="korean-text tts-trigger">비싸다 (bissada):</strong> Être cher</li>
+                            <li><strong class="korean-text tts-trigger">싸다 (ssada):</strong> Être bon marché</li>
                         </ul>
                      </details>
                 </div>
+
+                <div class="card">
+                     <details><summary class="text-xl font-bold cursor-pointer">Maison (<span class="korean-text tts-trigger">집</span>)</summary>
+                        <ul class="mt-4 space-y-2 text-gray-700">
+                            <li><strong class="korean-text tts-trigger">집 (jip):</strong> Maison</li>
+                            <li><strong class="korean-text tts-trigger">방 (bang):</strong> Chambre</li>
+                            <li><strong class="korean-text tts-trigger">침대 (chimdae):</strong> Lit</li>
+                            <li><strong class="korean-text tts-trigger">책상 (chaeksang):</strong> Bureau</li>
+                            <li><strong class="korean-text tts-trigger">의자 (uija):</strong> Chaise</li>
+                            <li><strong class="korean-text tts-trigger">부엌 (bueok):</strong> Cuisine</li>
+                        </ul>
+                     </details>
+                </div>
+
+                <div class="card">
+                     <details><summary class="text-xl font-bold cursor-pointer">Santé (<span class="korean-text tts-trigger">건강</span>)</summary>
+                        <ul class="mt-4 space-y-2 text-gray-700">
+                            <li><strong class="korean-text tts-trigger">병원 (byeongwon):</strong> Hôpital</li>
+                            <li><strong class="korean-text tts-trigger">의사 (uisa):</strong> Médecin</li>
+                            <li><strong class="korean-text tts-trigger">약 (yak):</strong> Médicament</li>
+                            <li><strong class="korean-text tts-trigger">아프다 (apeuda):</strong> Avoir mal / Être malade</li>
+                            <li><strong class="korean-text tts-trigger">머리 (meori):</strong> Tête</li>
+                            <li><strong class="korean-text tts-trigger">배 (bae):</strong> Ventre</li>
+                        </ul>
+                     </details>
+                </div>
+
             </div>
         </section>
 
         <!-- Culture Section -->
         <section id="culture" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Culture et Pratique</h2>
-            <div class="card">
-                <h3 class="text-xl font-bold mb-4">Le système honorifique et la politesse</h3>
-                <p class="text-gray-700">La culture coréenne accorde une grande importance au respect, notamment envers les aînés. Cela se reflète dans la langue avec différents niveaux de politesse. En cas de doute, utilisez toujours la forme polie standard (se terminant par -요, yo). Appeler les gens par leur titre (ex: professeur, directeur) est aussi très courant.</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Culture et Pratique du Coréen</h2>
+            <div class="space-y-12">
+                <div class="card">
+                    <p class="text-gray-700 leading-relaxed">L'apprentissage d'une langue ne se limite pas à la maîtrise de son vocabulaire et de sa grammaire. Pour communiquer efficacement en coréen, il est essentiel de comprendre les aspects culturels qui influencent la langue et les interactions sociales.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Éléments culturels essentiels</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3">Le système honorifique (<span class="korean-text tts-trigger">경어법</span>)</h4>
+                            <p class="text-gray-700">Le système honorifique est l'un des aspects les plus distinctifs de la langue coréenne. Il reflète l'importance accordée à la hiérarchie sociale et au respect. En cas de doute, utilisez toujours le niveau de politesse standard (se terminant par <span class="korean-text tts-trigger">-요</span>).</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3">Concepts culturels importants</h4>
+                            <div class="grid md:grid-cols-2 gap-6 mt-4">
+                                <div>
+                                    <h5 class="font-bold text-lg mb-2"><span class="korean-text tts-trigger">정 (Jeong)</span></h5>
+                                    <p class="text-gray-600">Un sentiment d'attachement, d'affection et de connexion émotionnelle qui se développe entre les personnes.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-lg mb-2"><span class="korean-text tts-trigger">눈치 (Nunchi)</span></h5>
+                                    <p class="text-gray-600">L'art de "lire" une situation sociale et d'agir en conséquence, une forme d'intelligence sociale très valorisée.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-lg mb-2"><span class="korean-text tts-trigger">체면 (Chemyeon)</span></h5>
+                                    <p class="text-gray-600">Le concept de "face" ou de dignité personnelle. Il est important de préserver sa propre dignité et celle des autres.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-lg mb-2"><span class="korean-text tts-trigger">우리 (Uri)</span></h5>
+                                    <p class="text-gray-600">Signifie "nous/notre", mais est souvent utilisé à la place de "mon/ma" (ex: <span class="korean-text tts-trigger">우리 집</span>, "notre maison") pour souligner l'esprit de collectivité.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Expressions idiomatiques courantes</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong class="font-semibold korean-text tts-trigger">눈이 높다 (nuni nopda)</strong> - "Avoir les yeux hauts" : Être difficile, avoir des standards élevés.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">발이 넓다 (bari neolda)</strong> - "Avoir les pieds larges" : Avoir un grand réseau, connaître beaucoup de monde.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">손이 크다 (soni keuda)</strong> - "Avoir les mains grandes" : Être généreux, notamment avec la nourriture.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">입이 무겁다 (ibi mugeopda)</strong> - "Avoir la bouche lourde" : Savoir garder un secret.</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">식은 죽 먹기 (sigeun juk meokgi)</strong> - "Manger de la bouillie froide" : Quelque chose de très facile, "c'est du gâteau".</li>
+                        <li><strong class="font-semibold korean-text tts-trigger">하늘의 별 따기 (haneurui byeol ttagi)</strong> - "Cueillir une étoile du ciel" : Quelque chose de quasi impossible.</li>
+                    </ul>
+                </div>
                 
-                <div class="mt-6 grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-bold text-lg mb-2">정 (Jeong)</h4>
-                        <p class="text-gray-600">Un sentiment profond d'attachement et de connexion émotionnelle qui lie les gens. C'est plus que de l'amitié ou de l'amour.</p>
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Conseils pour la pratique quotidienne</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Immersion :</strong> Changez la langue de votre téléphone en coréen, regardez des dramas (d'abord avec sous-titres FR, puis KR), écoutez de la K-pop.</li>
+                        <li><strong>Partenaires linguistiques :</strong> Utilisez des applications comme HelloTalk ou Tandem pour échanger avec des locuteurs natifs.</li>
+                        <li><strong>Routine d'étude :</strong> La constance est la clé. Fixez-vous des objectifs réalistes (ex: 5 mots par jour) et tenez-vous-y.</li>
+                        <li><strong>Parlez à voix haute :</strong> Même seul, pratiquez la prononciation. Enregistrez-vous pour vous améliorer.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ressources Section -->
+        <section id="ressources" class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">Ressources et Progression</h2>
+            <div class="space-y-12">
+                <div class="card">
+                    <p class="text-gray-700 leading-relaxed">Félicitations pour avoir parcouru l'ensemble de ce cursus ! Ce dernier chapitre vous propose un plan d'étude recommandé, des ressources complémentaires pour poursuivre votre apprentissage, et des conseils pour continuer à progresser en coréen au-delà de ce manuel.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Plan d'étude recommandé sur 6 mois</h3>
+                    <div class="space-y-4">
+                        <p><strong class="font-semibold">Mois 1 : Les bases.</strong> Objectif : Maîtriser le Hangul, la prononciation et les salutations.</p>
+                        <p><strong class="font-semibold">Mois 2 : Communication de base.</strong> Objectif : Comprendre la grammaire fondamentale et le vocabulaire thématique.</p>
+                        <p><strong class="font-semibold">Mois 3 : Construire des phrases.</strong> Objectif : Apprendre les phrases complexes et comprendre les aspects culturels.</p>
+                        <p><strong class="font-semibold">Mois 4 : Immersion et pratique.</strong> Objectif : Améliorer la compréhension et l'expression orale.</p>
+                        <p><strong class="font-semibold">Mois 5 : Consolidation.</strong> Objectif : Réviser la grammaire et enrichir le vocabulaire.</p>
+                        <p><strong class="font-semibold">Mois 6 : Mise en pratique.</strong> Objectif : Appliquer ses connaissances dans des contextes authentiques.</p>
                     </div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-2">눈치 (Nunchi)</h4>
-                        <p class="text-gray-600">L'art subtil de "lire l'ambiance", de comprendre les pensées et les sentiments des autres sans qu'ils aient à parler. Une compétence sociale très valorisée.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Ressources complémentaires</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Livres</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Le Coréen pour les Nuls</li>
+                                <li>Manuel d'initiation au coréen</li>
+                                <li>Integrated Korean (en anglais)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Sites & Applications</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Talk To Me In Korean (TTMIK)</li>
+                                <li>How to Study Korean</li>
+                                <li>Naver Dictionary</li>
+                                <li>HelloTalk / Tandem</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Médias</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Dramas sur Viki ou Netflix</li>
+                                <li>Webtoons sur Naver Webtoon</li>
+                                <li>Podcasts pour apprenants</li>
+                                <li>Chaînes YouTube (Korean Unnie)</li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
+
+                 <div class="card">
+                    <h3 class="text-2xl font-bold mb-4">Tests et certifications</h3>
+                    <p class="text-gray-700 leading-relaxed">Pour évaluer officiellement votre niveau, le <strong class="font-semibold">TOPIK (Test of Proficiency in Korean)</strong> est le test de référence international. Il se divise en deux niveaux : TOPIK I (débutant) et TOPIK II (intermédiaire à avancé).</p>
                 </div>
             </div>
         </section>
@@ -546,6 +1084,58 @@
             });
             
             loadQuiz();
+
+            // --- TTS Logic ---
+            let koreanVoice = null;
+
+            function setVoice() {
+                const voices = window.speechSynthesis.getVoices();
+                koreanVoice = voices.find(voice => voice.lang === 'ko-KR');
+                if (!koreanVoice) {
+                    koreanVoice = voices.find(voice => voice.lang.startsWith('ko'));
+                }
+            }
+
+            function speak(text) {
+                if (typeof SpeechSynthesisUtterance === 'undefined' || typeof speechSynthesis === 'undefined') {
+                    alert('Désolé, votre navigateur ne supporte pas la synthèse vocale.');
+                    return;
+                }
+
+                if (!koreanVoice) {
+                    // Attempt to set the voice again, as it might be loaded late.
+                    setVoice();
+                    if(!koreanVoice) {
+                        alert('Aucune voix coréenne n\'est disponible sur votre système pour la synthèse vocale.');
+                        return;
+                    }
+                }
+
+                const textToSpeak = text.replace(/🔊/g, '').trim();
+                const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                utterance.voice = koreanVoice;
+                utterance.lang = koreanVoice.lang;
+                utterance.rate = 0.9;
+
+                speechSynthesis.cancel();
+                speechSynthesis.speak(utterance);
+            }
+
+            // The voices are loaded asynchronously. We need to wait for them.
+            if (speechSynthesis.onvoiceschanged !== undefined) {
+                speechSynthesis.onvoiceschanged = setVoice;
+            }
+            // Initial call to try and load voices.
+            setVoice();
+
+            // --- Attach TTS Listeners ---
+            const ttsElements = document.querySelectorAll('.tts-trigger');
+            ttsElements.forEach(element => {
+                element.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    speak(element.textContent);
+                });
+            });
         });
     </script>
 
