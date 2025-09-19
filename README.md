@@ -1,4 +1,4 @@
-# Introduction au Cursus de Coréen pour Francophones
+# [Introduction au Cursus de Coréen pour Francophones](https://toastaspiring.github.io/cursus_korea/)
 
 Bienvenue dans ce cursus complet d'apprentissage du coréen spécialement conçu pour les francophones. Ce manuel a été élaboré pour vous accompagner pas à pas, depuis vos premiers contacts avec cette fascinante langue jusqu'à l'acquisition d'une base solide vous permettant de communiquer efficacement en coréen.
 
